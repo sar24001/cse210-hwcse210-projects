@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
-using ScriptureMemorizerWeek03;
+using ScriptureMemorizer;
 
-namespace ScriptureMemorizerWeek03
+namespace ScriptureMemorizer
 {
     class Program
     {

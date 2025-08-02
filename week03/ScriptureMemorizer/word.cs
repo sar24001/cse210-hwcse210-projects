@@ -1,15 +1,9 @@
-namespace ScriptureMemorizerWeek03
+namespace ScriptureMemorizer
 {
-    public class Word
+    public class Word(string text)
     {
-        private readonly string _text;
-        private bool _isHidden;
-
-        public Word(string text)
-        {
-            _text = text;
-            _isHidden = false;
-        }
+        private readonly string _text = text;
+        private bool _isHidden = false;
 
         public void Hide()
         {

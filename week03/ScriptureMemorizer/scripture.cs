@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ScriptureMemorizerWeek03
+namespace ScriptureMemorizer
 {
     public class Scripture
     {
@@ -13,17 +13,16 @@ namespace ScriptureMemorizerWeek03
         public Scripture(Reference reference, string text)
         {
             _reference = reference;
-            _words = text
+            _words = [.. text
                 .Split(' ', StringSplitOptions.RemoveEmptyEntries)
-                .Select(w => new Word(w))
-                .ToList();
+                .Select(w => new Word(w))];
         }
 
         // Hide up to 'count' random words that are not already hidden
         public void HideRandomWords(int count)
         {
             var visibleWords = _words.Where(w => !w.IsHidden()).ToList();
-            if (!visibleWords.Any())
+            if (visibleWords.Count == 0)
                 return;
 
             if (count > visibleWords.Count)
@@ -41,7 +40,7 @@ namespace ScriptureMemorizerWeek03
         public void RevealRandomWord()
         {
             var hiddenWords = _words.Where(w => w.IsHidden()).ToList();
-            if (!hiddenWords.Any())
+            if (hiddenWords.Count == 0)
                 return;
 
             var index = _random.Next(hiddenWords.Count);

@@ -1,6 +1,6 @@
 using System;
 
-namespace ScriptureMemorizerWeek03
+namespace ScriptureMemorizer
 {
     public class Reference
     {
